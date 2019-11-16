@@ -1,0 +1,63 @@
+Makefile:23: "not define CROSS_COMPILE"
+Makefile.mk:27: "DBGFLAGS="
+for dir in RSAEuro  ; do \
+		make -C $dir all; done
+make[1]: Entering directory '/home/ubuntu/linux-share/RSA/RSAEuro/RSAEuro'
+../Makefile.mk:27: "DBGFLAGS="
+g++  -I/home/ubuntu/linux-share/RSA/RSAEuro/include -W -Wall -Wstrict-prototypes -Wundef -Wunknown-pragmas -Wunreachable-code -Wfloat-equal -W -Wimplicit -Wconversion  -I/home/ubuntu/linux-share/RSA/RSAEuro/include  -c -o r_enhanc.o r_enhanc.c
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+cc1plus: warning: command line option ‘-Wimplicit’ is valid for C/ObjC but not for C++
+r_enhanc.c:95:24: error: variable or field ‘R_RSAEuroInfo’ declared void
+ void R_RSAEuroInfo(info)
+                        ^
+r_enhanc.c:95:20: error: ‘info’ was not declared in this scope
+ void R_RSAEuroInfo(info)
+                    ^
+r_enhanc.c:97:1: error: expected unqualified-id before ‘{’ token
+ {
+ ^
+r_enhanc.c:111:18: error: ‘int R_DigestInit’ redeclared as different kind of symbol
+ int R_DigestInit(context, digesttype)
+                  ^
+In file included from r_enhanc.c:44:0:
+rsaeuro.h:255:5: note: previous declaration ‘int R_DigestInit(R_DIGEST_CTX*, int)’
+ int R_DigestInit PROTO_LIST ((R_DIGEST_CTX *, int));
+     ^
+r_enhanc.c:111:18: error: ‘context’ was not declared in this scope
+ int R_DigestInit(context, digesttype)
+                  ^
+r_enhanc.c:111:27: error: ‘digesttype’ was not declared in this scope
+ int R_DigestInit(context, digesttype)
+                           ^
+r_enhanc.c:114:1: error: expected unqualified-id before ‘{’ token
+ {
+ ^
+r_enhanc.c:53:22: warning: ‘DIGEST_INFO_A’ defined but not used [-Wunused-variable]
+ static unsigned char DIGEST_INFO_A[] = {
+                      ^
+r_enhanc.c:60:22: warning: ‘DIGEST_INFO_B’ defined but not used [-Wunused-variable]
+ static unsigned char DIGEST_INFO_B[] = { 0x05, 0x00, 0x04, 0x10 };
+                      ^
+r_enhanc.c:66:23: warning: ‘PADDING’ defined but not used [-Wunused-variable]
+ static unsigned char *PADDING[] = {
+                       ^
+r_enhanc.c:77:13: warning: ‘void R_EncodeDigestInfo(unsigned char*, int, unsigned char*)’ declared ‘static’ but never defined [-Wunused-function]
+ static void R_EncodeDigestInfo PROTO_LIST((unsigned char *, int, unsigned char *));
+             ^
+r_enhanc.c:78:12: warning: ‘int R_CheckDigestInfo(unsigned char*, unsigned char*)’ declared ‘static’ but never defined [-Wunused-function]
+ static int R_CheckDigestInfo PROTO_LIST ((unsigned char *, unsigned char *));
+            ^
+r_enhanc.c:82:12: warning: ‘int CipherInit(R_ENVELOPE_CTX*, int, unsigned char*, int, unsigned char*, int)’ declared ‘static’ but never defined [-Wunused-function]
+ static int CipherInit PROTO_LIST((R_ENVELOPE_CTX *, int, unsigned char *, int, unsigned char *, int));
+            ^
+r_enhanc.c:83:13: warning: ‘void EncryptBlk(R_ENVELOPE_CTX*, unsigned char*, unsigned char*, unsigned int)’ declared ‘static’ but never defined [-Wunused-function]
+ static void EncryptBlk PROTO_LIST((R_ENVELOPE_CTX *, unsigned char *, unsigned char *, unsigned int));
+             ^
+r_enhanc.c:84:13: warning: ‘void RestartCipher(R_ENVELOPE_CTX*)’ declared ‘static’ but never defined [-Wunused-function]
+ static void RestartCipher PROTO_LIST((R_ENVELOPE_CTX *));
+             ^
+<builtin>: recipe for target 'r_enhanc.o' failed
+make[1]: *** [r_enhanc.o] Error 1
+make[1]: Leaving directory '/home/ubuntu/linux-share/RSA/RSAEuro/RSAEuro'
+Makefile:91: recipe for target 'depend' failed
+make: *** [depend] Error 2
